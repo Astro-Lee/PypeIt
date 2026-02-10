@@ -235,3 +235,13 @@ class JWSTTelescopePar(TelescopePar):
                                               latitude=0.0,
                                               elevation=0.0,
                                               diameter=6.5)
+
+class LijiangTelescopePar(TelescopePar):
+    def __init__(self):
+        loc = EarthLocation.from_geodetic(100.0297000,26.6950000,3248.330) # FITS header values
+        super(LijiangTelescopePar, self).__init__(name='LJT',
+                                                  longitude=loc.lon.to(units.deg).value,
+                                                  latitude=loc.lat.to(units.deg).value,
+                                                  elevation=loc.height.to(units.m).value,
+                                                  diameter=2.4)
+
