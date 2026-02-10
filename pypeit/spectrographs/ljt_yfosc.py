@@ -136,7 +136,7 @@ class LJTYFOSCSpectrograph(spectrograph.Spectrograph):
         # # Flats are sometimes quite ugly due to dust on the slit which leads to the erroneous detection of multiple slits. So set a higher edge_thresh and minimum_slit_gap.
         # par['calibrations']['slitedges']['edge_thresh'] = 30
         # par['calibrations']['slitedges']['minimum_slit_gap'] = 15
-        
+
         # Tilt parameters
         par['calibrations']['tilts']['tracethresh'] = 25.0
         par['calibrations']['tilts']['spat_order'] = 3
@@ -174,7 +174,7 @@ class LJTYFOSCSpectrograph(spectrograph.Spectrograph):
         par['sensfunc']['use_flat'] = True
         par['sensfunc']['polyorder'] = 11
         par['sensfunc']['samp_fact'] = 0.1
-        
+
         # No overscan region!
         turn_off = dict(use_overscan=False)
         par.reset_all_processimages_par(**turn_off)
@@ -333,7 +333,7 @@ class LJTYFOSCSpectrograph(spectrograph.Spectrograph):
 
         # Wavelength calibrations
         if self.get_meta_value(scifile, 'lampstat03') == 'grism3':
-            par['calibrations']['wavelengths']['reid_arxiv'] = 'ljt_yfosc_grism3.fits'
+            par['calibrations']['wavelengths']['reid_arxiv'] = 'ljt_yfosc_grism3_HeNe.fits'
             # par['calibrations']['wavelengths']['lamps'] = ['HeI','NeI']
         else:
             msgs.warn('ljt_yfosc.py: YOU NEED TO ADD IN THE WAVELENGTH SOLUTION FOR THIS GRISM')
